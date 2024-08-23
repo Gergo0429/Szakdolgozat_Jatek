@@ -1,0 +1,24 @@
+//Main menu
+
+NewGame = New game
+Levels = Levels
+Settings = Settings
+QuitGame = Quit game
+Back = Back
+FOV = FOV
+Quality = Quality
+MSensitivity = Mouse sensitivity
+Language = Language
+English = English
+Hungarian = Magyar
+Low = Low
+Medium = Medium
+High = High
+MainMenu = Back to main menu
+
+//In game
+InHand = In hand
+Mirror = Mirror
+ItemNeeded = Item needed
+RedKey = Red key
+Door = Door

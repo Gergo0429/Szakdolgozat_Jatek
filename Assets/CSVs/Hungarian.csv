@@ -1,0 +1,24 @@
+//Main menu
+
+NewGame = Új játék
+Levels = Szintek
+Settings = Beállítások
+QuitGame = Kilépés
+Back = Vissza
+FOV = Látószög
+Quality = Minőség
+MSensitivity = Egér érzékenység
+Language = Nyelv
+English = English
+Hungarian = Magyar
+Low = Alacsony
+Medium = Közepes
+High = Magas
+MainMenu = Vissza a főmenübe
+
+//In game
+InHand = Kézben
+Mirror = Tükör
+ItemNeeded = Szükséges tárgy
+RedKey = Piros kulcs
+Door = Ajtó
