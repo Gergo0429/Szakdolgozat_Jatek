@@ -32,7 +32,7 @@ public abstract class InteractableBase : MonoBehaviour, IInteractable
                 gameUICanvas.GetComponent<GameUICanvasMngr>().LookingAt(Lean.Localization.LeanLocalization.GetTranslationText(itemName));
                 lookedOnThis = true;
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(1))
                 {
                     Interact();
                 }

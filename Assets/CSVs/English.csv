@@ -1,4 +1,4 @@
-//Main menu
+//Menu
 
 NewGame = New game
 Levels = Levels
@@ -15,10 +15,20 @@ Low = Low
 Medium = Medium
 High = High
 MainMenu = Back to main menu
+Retry = Retry
+Dead = You died
+Loading = Loading...
 
 //In game
 InHand = In hand
 Mirror = Mirror
 ItemNeeded = Item needed
+CodeNeeded = Code needed
 RedKey = Red key
 Door = Door
+Drawer = Drawer
+NoAmmo = No more ammo ...
+Ammo = Ammo
+Paper = Paper
+Paper1 = First paper
+Button = Button

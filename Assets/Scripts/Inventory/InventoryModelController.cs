@@ -96,6 +96,6 @@ public class InventoryModelController : MonoBehaviour
 
     public List<ItemModel> GetAllItems()
     {
-        return new List<ItemModel>(items);  // Return a copy of the list
+        return new List<ItemModel>(items);
     }
 }

@@ -10,13 +10,16 @@ public class InventoryItemView : MonoBehaviour, IDragHandler, IBeginDragHandler,
     public Transform startPosition;
     private Camera cam;
     private Image thisImage;
-
+    private Color originalImageColor;
+    private InventoryViewController viewController;
 
     void Awake()
     {
         thisImage = GetComponent<Image>();
+        originalImageColor = thisImage.color;
         startPosition = transform.parent;
         cam = GameObject.Find("Inventory/InventoryPanel/Camera").GetComponent<Camera>();
+        viewController = transform.parent.parent.GetComponent<InventoryViewController>();
     }
 
     public void SetIcon(Sprite icon)
@@ -56,5 +59,21 @@ public class InventoryItemView : MonoBehaviour, IDragHandler, IBeginDragHandler,
     {
         transform.SetParent(startPosition);
         thisImage.raycastTarget = true;
+    }
+
+    public void OnPointerEnter()
+    {
+        Color darkenedColor = new Color(originalImageColor.r * 0.5f, originalImageColor.g * 0.5f, originalImageColor.b * 0.5f, originalImageColor.a);
+        thisImage.color = darkenedColor;
+    }
+
+    public void OnPointerExit()
+    {
+        thisImage.color = originalImageColor;
+    }
+
+    public void OnClick()
+    {
+        viewController.Clicked(transform.parent.GetSiblingIndex());
     }
 }

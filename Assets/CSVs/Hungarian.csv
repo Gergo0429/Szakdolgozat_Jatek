@@ -1,4 +1,4 @@
-//Main menu
+//Menu
 
 NewGame = Új játék
 Levels = Szintek
@@ -15,10 +15,20 @@ Low = Alacsony
 Medium = Közepes
 High = Magas
 MainMenu = Vissza a főmenübe
+Retry = Újra
+Dead = Meghaltál
+Loading = Betöltés...
 
 //In game
 InHand = Kézben
 Mirror = Tükör
 ItemNeeded = Szükséges tárgy
+CodeNeeded = Kód szükséges
 RedKey = Piros kulcs
 Door = Ajtó
+Drawer = Fiók
+NoAmmo = Nincs több töltény ...
+Ammo = Töltény
+Paper = Papír
+Paper1 = Első papír
+Button = Gomb

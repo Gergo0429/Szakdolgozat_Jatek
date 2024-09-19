@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorOpenClose : InteractableBase
 {
     public string keyNeeded;
+    public bool isLocked = false;
 
     private Animator doorAnimator = null;
     private bool isOpen = false;
@@ -19,16 +20,23 @@ public class DoorOpenClose : InteractableBase
 
     public override void Interact()
     {
-        if (keyNeeded != "" && keyNeeded != null)
+        if (isLocked)
         {
             if (GameObject.Find("Inventory").GetComponent<InventoryModelController>().UseFromHand(keyNeeded))
             {
-                keyNeeded = null;
+                isLocked = false;
                 sounds[2].Play();
             }
             else
             {
-                gameUICanvas.GetComponent<GameUICanvasMngr>().Help(Lean.Localization.LeanLocalization.GetTranslationText("ItemNeeded") + ": " + Lean.Localization.LeanLocalization.GetTranslationText(keyNeeded));
+                if (keyNeeded != "" && keyNeeded != null)
+                {
+                    gameUICanvas.GetComponent<GameUICanvasMngr>().Help(Lean.Localization.LeanLocalization.GetTranslationText("ItemNeeded") + ": " + Lean.Localization.LeanLocalization.GetTranslationText(keyNeeded));
+                }
+                else
+                {
+                    gameUICanvas.GetComponent<GameUICanvasMngr>().Help(Lean.Localization.LeanLocalization.GetTranslationText("CodeNeeded"));
+                }
                 sounds[3].Play();
             }
         }

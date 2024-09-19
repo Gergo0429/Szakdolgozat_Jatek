@@ -7,23 +7,29 @@ public class InventoryViewController : MonoBehaviour
     public GameObject itemPrefab;
     private List<Transform> thissChildren;
     private InventoryModelController inventoryModelController;
+    private ZoomedView zoomedView;
+    private string zoomedItem;
     private List<ItemModel> items;
 
     void Awake()
     {
         inventoryModelController = GameObject.Find("Inventory").GetComponent<InventoryModelController>();
         thissChildren = new List<Transform>();
+        zoomedView = GameObject.Find("ZoomedView").GetComponent<ZoomedView>();
 
         foreach (Transform child in transform)
         {
             thissChildren.Add(child);
         }
-
-        PopulateGrid();
     }
 
     void OnEnable()
     {
+        items = inventoryModelController.GetAllItems();
+        if (items.Find(item => item.itemName == zoomedItem) == null)
+        {
+            zoomedView.SetEmpty();
+        }
         PopulateGrid();
     }
 
@@ -32,10 +38,16 @@ public class InventoryViewController : MonoBehaviour
         inventoryModelController.SwitchItems(index1, index2);
     }
 
-    public void PopulateGrid()
+    public void Clicked(int index)
     {
         items = inventoryModelController.GetAllItems();
+        zoomedItem = items[index].itemName;
+        zoomedView.SetName(Lean.Localization.LeanLocalization.GetTranslationText(items[index].itemName));
+        zoomedView.SetImage(items[index].image);
+    }
 
+    public void PopulateGrid()
+    {
         for (int i = 0; i < items.Count; i++)
         {
             if (!string.IsNullOrEmpty(items[i].itemName))

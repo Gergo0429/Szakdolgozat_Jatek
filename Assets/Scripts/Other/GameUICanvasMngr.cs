@@ -8,10 +8,13 @@ public class GameUICanvasMngr : MonoBehaviour
     TextMeshProUGUI lookingAt;
     TextMeshProUGUI help;
 
-    void Start()
+    private StatsMngr stats;
+
+    void Awake()
     {
         lookingAt = transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         help = transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        stats = transform.GetChild(3).gameObject.GetComponent<StatsMngr>();
     }
 
     public void LookingAt(string textToWrite)
@@ -29,5 +32,25 @@ public class GameUICanvasMngr : MonoBehaviour
     {
         lookingAt.text = "";
         help.text = "";
+    }
+
+    public void Damageing()
+    {
+        transform.GetChild(2).gameObject.SetActive(true);
+    }
+
+    public void SetAmmoCount(int count)
+    {
+        stats.SetAmmo(count);
+    }
+
+    public void SetLife(float life)
+    {
+        stats.SetLife((int)life);
+    }
+
+    public void SetStamina(float stamina)
+    {
+        stats.SetStamina((int)stamina);
     }
 }
