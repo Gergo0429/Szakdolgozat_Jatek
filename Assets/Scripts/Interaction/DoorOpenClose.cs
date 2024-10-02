@@ -18,6 +18,22 @@ public class DoorOpenClose : InteractableBase
         sounds = GetComponents<AudioSource>();
     }
 
+    public void OpenClose()
+    {
+        if (!isOpen)
+        {
+            sounds[1].Play();
+            doorAnimator.Play("DoorOpen", 0, 0.0f);
+            isOpen = true;
+        }
+        else
+        {
+            sounds[0].PlayDelayed(0.8f);
+            doorAnimator.Play("DoorClose", 0, 0.0f);
+            isOpen = false;
+        }
+    }
+
     public override void Interact()
     {
         if (isLocked)
@@ -42,18 +58,7 @@ public class DoorOpenClose : InteractableBase
         }
         else
         {
-            if (!isOpen)
-            {
-                sounds[1].Play();
-                doorAnimator.Play("DoorOpen", 0, 0.0f);
-                isOpen = true;
-            }
-            else
-            {
-                sounds[0].PlayDelayed(0.8f);
-                doorAnimator.Play("DoorClose", 0, 0.0f);
-                isOpen = false;
-            }
+            OpenClose();
         }
     }
 }

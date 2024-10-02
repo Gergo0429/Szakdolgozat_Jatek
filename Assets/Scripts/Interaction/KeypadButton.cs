@@ -11,7 +11,7 @@ public class KeypadButton : InteractableBase
     private void Awake()
     {
         this.itemName = "Button";
-        keypadController = GameObject.Find("Keypad").GetComponent<KeypadController>();
+        keypadController = transform.parent.parent.parent.GetComponent<KeypadController>();
     }
 
     public override void Interact()

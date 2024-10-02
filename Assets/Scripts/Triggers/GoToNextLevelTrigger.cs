@@ -9,5 +9,7 @@ public class GoToNextLevelTrigger : TriggerBase
     public override void TriggerAction()
     {
         GameObject.Find("SceneMngr").GetComponent<SceneMngr>().LoadLevel(nextLevelIndex);
+        GameObject.Find("SaveMngr").GetComponent<SaveDAO>().data.level = nextLevelIndex;
+        GameObject.Find("SaveMngr").GetComponent<SaveDAO>().Save();
     }
 }

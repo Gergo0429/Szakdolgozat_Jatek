@@ -6,7 +6,8 @@ using TMPro;
 public class KeypadController : MonoBehaviour
 {
     public int code;
-    public GameObject doorToOpen;
+    public GameObject lockToOpen;
+    public bool isDoor = true;
 
     private TextMeshProUGUI textMesh;
     private AudioSource[] sounds;
@@ -32,7 +33,14 @@ public class KeypadController : MonoBehaviour
             {
                 textMesh.text = "APPROVED";
                 textMesh.color = Color.green;
-                doorToOpen.transform.GetChild(0).gameObject.GetComponent<DoorOpenClose>().isLocked = false;
+                if (isDoor)
+                {
+                    lockToOpen.transform.GetChild(0).gameObject.GetComponent<DoorOpenClose>().isLocked = false;
+                }
+                else
+                {
+                    lockToOpen.transform.GetChild(0).gameObject.GetComponent<DrawerOpenClose>().isLocked = false;
+                }
                 sounds[2].Play();
             }
             else

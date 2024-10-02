@@ -64,10 +64,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Ammo
+  distance: 2.5
   itemModel:
     itemName: Ammo
     quantity: 4
     icon: {fileID: 21300000, guid: a81296dffe8db9144a334e3a28853215, type: 3}
+    image: {fileID: 21300000, guid: 356191e7e1e06c644bec6dbd69f66eae, type: 3}
 --- !u!82 &5612388624843803218
 AudioSource:
   m_ObjectHideFlags: 0

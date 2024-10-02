@@ -20,6 +20,10 @@ public class SaveDAO : MonoBehaviour
 
     public void Save()
     {
+        if (data.level < 1)
+        {
+            data.level = 1;
+        }
         string saveData = JsonUtility.ToJson(data);
         File.WriteAllText(saveFilePath, saveData);
     }
@@ -30,6 +34,11 @@ public class SaveDAO : MonoBehaviour
         {
             string loadData = File.ReadAllText(saveFilePath);
             data = JsonUtility.FromJson<Data>(loadData);
+        }
+        else
+        {
+            data = new Data();
+            Save();
         }
     }
 }

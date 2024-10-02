@@ -19,16 +19,32 @@ Retry = Retry
 Dead = You died
 Loading = Loading...
 
+lvT = Tutorial
+lv1 = First level
+lv2 = Second level
+lv3 = Third level
+
+//Tutorial
+Tutorial1 = Use LMB (Left click) to shoot enemy!
+Tutorial2 = Look around! (LeftShift -> run) Use RMB (Right click) to collect items.
+Tutorial3 = Use "R" to reload gun, afther that use "E" to open Inventory.
+Tutorial4 = Drag key to "InHand" slot.
+Tutorial5 = After closing inventory("E"), use RMB (Right click) on the correct lock to use the key, then use RMB (Right click) again to open.
+Tutorial6 = Collect paper. In the inventory click on the paper icon to find the code. Write the con in the keypad net to the door.
+Tutorial7 = Exit on that door.
+
 //In game
 InHand = In hand
 Mirror = Mirror
 ItemNeeded = Item needed
 CodeNeeded = Code needed
 RedKey = Red key
+GreenKey = Green key
 Door = Door
 Drawer = Drawer
 NoAmmo = No more ammo ...
 Ammo = Ammo
 Paper = Paper
 Paper1 = First paper
+Paper2 = Second paper
 Button = Button

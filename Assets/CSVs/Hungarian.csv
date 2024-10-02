@@ -19,16 +19,33 @@ Retry = Újra
 Dead = Meghaltál
 Loading = Betöltés...
 
+lvT = Tutorial
+lv1 = Első szint
+lv2 = Második szint
+lv3 = Harmadik szint
+
+//Tutorial
+Tutorial1 = Használd a "Bal klikk"-et (LMB) hogy le lődd az ellenséget!
+Tutorial2 = Nézz körül! (BalShift -> futás) Használd a "Jobb klikk"-et (RMB) a tárgyak begyűjtéséhez.
+Tutorial3 = "R" gombbal töltsd újra a fegyvered, majd "E" gombbal nyisd meg az eszköztárad.
+Tutorial4 = Húzd a kulcsot a "Kézben" rekeszbe.
+Tutorial5 = Az eszköztár bezárása("E") után használd a "Jobb klikk"-et (RMB) a megfelelő zárra a kulcs felhasználásához, majd használj ismét "Jobb klikk"-et (RMB) a kinyitáshoz.
+Tutorial6 = Gyűjtsd be a papírt. Az eszköztárban kattints a papír ikonra a kód megtalálásához. Írd be a kódot az ajtó melletti billentyűzeten.
+Tutorial7 = Menj ki az ajtón.
+
+
 //In game
 InHand = Kézben
 Mirror = Tükör
 ItemNeeded = Szükséges tárgy
 CodeNeeded = Kód szükséges
 RedKey = Piros kulcs
+GreenKey = Zöld kulcs
 Door = Ajtó
 Drawer = Fiók
 NoAmmo = Nincs több töltény ...
 Ammo = Töltény
 Paper = Papír
 Paper1 = Első papír
+Paper2 = Második papír
 Button = Gomb

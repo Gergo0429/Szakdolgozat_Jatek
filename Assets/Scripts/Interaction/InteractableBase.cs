@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class InteractableBase : MonoBehaviour, IInteractable
 {
     public string itemName;
+    public float distance = 2.5f;
 
     protected Camera eyeCamera;
     protected GameObject gameUICanvas;
@@ -27,7 +28,7 @@ public abstract class InteractableBase : MonoBehaviour, IInteractable
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject == this.gameObject && Vector3.Distance(transform.position, eyeCamera.gameObject.GetComponent<Transform>().position) < 2.5f)
+            if (hit.collider.gameObject == this.gameObject && Vector3.Distance(transform.position, eyeCamera.gameObject.GetComponent<Transform>().position) < distance)
             {
                 gameUICanvas.GetComponent<GameUICanvasMngr>().LookingAt(Lean.Localization.LeanLocalization.GetTranslationText(itemName));
                 lookedOnThis = true;
